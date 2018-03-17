@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#c2c2c2">
+
+
+<Button
+    android:id="@+id/bSearch"
+    android:layout_width="140dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="32dp"
+    android:background="@drawable/orange_background"
+    android:text="search"
+    android:textColor="@android:color/background_light"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/bAddBuyer" />
+
+<Button
+    android:id="@+id/bAddBuyer"
+    android:layout_width="140dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="92dp"
+    android:background="@drawable/orange_background"
+    android:text="add buyer"
+    android:textColor="@android:color/background_light"
+    app:layout_constraintEnd_toEndOf="@+id/bSearch"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="@+id/bSearch"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<Button
+    android:id="@+id/bAddSeller"
+    android:layout_width="140dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="36dp"
+    android:background="@drawable/orange_background"
+    android:text="add seller"
+    android:textColor="@android:color/background_light"
+    app:layout_constraintEnd_toEndOf="@+id/bSearch"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="@+id/bSearch"
+    app:layout_constraintTop_toBottomOf="@+id/bSearch" />
+
+</android.support.constraint.ConstraintLayout>
