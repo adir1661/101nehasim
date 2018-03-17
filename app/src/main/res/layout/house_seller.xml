@@ -153,7 +153,7 @@
 
 
         <SeekBar
-            android:id="@+id/seekBar"
+            android:id="@+id/sbMinRooms"
             style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

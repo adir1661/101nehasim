@@ -22,9 +22,9 @@ public class SellerList implements DB_manager {
     }
 
     @Override
-    public long addUser(ContentValues contentValues) {
-        sellers.add(CV_tools.ContentValuesToSeller(contentValues));
-        return contentValues.getAsLong(Finals_101.Seller.ID);
+    public long addUser(Customer seller) {
+        sellers.add((Seller) seller);
+        return seller.getId();
     }
 
     @Override

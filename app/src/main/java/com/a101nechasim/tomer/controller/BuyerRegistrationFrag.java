@@ -1,6 +1,5 @@
 package com.a101nechasim.tomer.controller;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -15,13 +14,14 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.a101nechasim.tomer.R;
+import com.a101nechasim.tomer.controller.tools.Listeners;
 import com.a101nechasim.tomer.model.beckend.DB_factory;
 import com.a101nechasim.tomer.model.beckend.DB_manager;
 
 
 public class BuyerRegistrationFrag extends Fragment {
     DB_manager buyers= DB_factory.buyerListInstance();
-    
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,13 +33,18 @@ public class BuyerRegistrationFrag extends Fragment {
     private EditText etName;
     private EditText etPhone;
     private EditText etEmail;
+    private EditText etFloor;
+    private EditText etMinValue;
+    private EditText etMaxValue;
     private TextView tvElevator;
     private Switch sElevator;
     private RelativeLayout llsPrivate;
     private TextView tvPrivate;
     private Switch sPrivate;
-    private SeekBar seekBar;
-    private SeekBar seekBar2;
+    private SeekBar sbMinRooms;
+    private EditText etMinRooms;
+    private SeekBar sbMaxRooms;
+    private EditText etMaxRooms;
     private SeekBar sbFloor;
     private SeekBar sbMinValue;
     private SeekBar sbMaxValue;
@@ -55,15 +60,29 @@ public class BuyerRegistrationFrag extends Fragment {
         etName = (EditText)v.findViewById( R.id.etName );
         etPhone = (EditText)v.findViewById( R.id.etPhone );
         etEmail = (EditText)v.findViewById( R.id.etEmail );
+        etMinValue = v.findViewById(R.id.etMinValue);
+        etMaxValue = v.findViewById(R.id.etMaxValue);
+        etFloor = v.findViewById(R.id.etFloor);
         tvElevator = (TextView)v.findViewById( R.id.tvElevator );
         sElevator = (Switch)v.findViewById( R.id.sElevator );
         tvPrivate = (TextView)v.findViewById( R.id.tvPrivate );
         sPrivate = (Switch)v.findViewById( R.id.sPrivate );
-        seekBar = (SeekBar)v.findViewById( R.id.seekBar );
-        seekBar2 = (SeekBar)v.findViewById( R.id.seekBar2 );
+        sbMinRooms = (SeekBar)v.findViewById( R.id.sbMinRooms);
+        etMinRooms = v.findViewById(R.id.etMinRooms);
+        sbMaxRooms = (SeekBar)v.findViewById( R.id.sbMaxRooms);
+        etMaxRooms = v.findViewById(R.id.etMaxRooms);
         sbFloor = (SeekBar)v.findViewById( R.id.sbFloor );
         sbMinValue = (SeekBar)v.findViewById( R.id.sbMinValue );
         sbMaxValue = (SeekBar)v.findViewById( R.id.sbMaxValue );
+        Listeners.attachEdittextToSeekbar(sbMinRooms,etMinRooms);
+        Listeners.attachEdittextToSeekbar(sbMaxRooms,etMaxRooms);
+        Listeners.attachEdittextToSeekbar(sbFloor,etFloor);
+        Listeners.attachEdittextToSeekbar(sbMinValue,etMinValue);
+        Listeners.attachEdittextToSeekbar(sbMaxValue,etMaxValue);
+
+
+
+
     }
 
 

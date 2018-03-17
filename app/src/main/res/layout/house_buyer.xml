@@ -147,7 +147,7 @@
                     android:text="Min:" />
 
                 <SeekBar
-                    android:id="@+id/seekBar"
+                    android:id="@+id/sbMinRooms"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -158,6 +158,8 @@
                     android:progress="2" />
 
                 <EditText
+                    android:id="@+id/etMinRooms"
+                    android:inputType="number"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -182,7 +184,7 @@
                     android:text="max:" />
 
                 <SeekBar
-                    android:id="@+id/seekBar2"
+                    android:id="@+id/sbMaxRooms"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -193,6 +195,8 @@
                     android:progress="2" />
 
                 <EditText
+                    android:id="@+id/etMaxRooms"
+                    android:inputType="number"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -236,7 +240,9 @@
             android:progress="0" />
 
         <EditText
+            android:id="@+id/etFloor"
             android:layout_width="50dp"
+            android:inputType="number"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="5dp"
@@ -287,7 +293,9 @@
                 android:progress="500" />
 
             <EditText
+                android:id="@+id/etMinValue"
                 android:layout_width="75dp"
+                android:inputType="number"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="5dp"
@@ -321,7 +329,9 @@
                 android:progress="3000" />
 
             <EditText
+                android:id="@+id/etMaxValue"
                 android:layout_width="75dp"
+                android:inputType="number"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="5dp"
