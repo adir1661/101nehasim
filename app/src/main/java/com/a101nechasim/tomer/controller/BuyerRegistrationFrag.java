@@ -1,5 +1,6 @@
 package com.a101nechasim.tomer.controller;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -7,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
@@ -14,9 +16,13 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.a101nechasim.tomer.R;
+import com.a101nechasim.tomer.controller.tools.DatabaseConnection;
 import com.a101nechasim.tomer.controller.tools.Listeners;
 import com.a101nechasim.tomer.model.beckend.DB_factory;
 import com.a101nechasim.tomer.model.beckend.DB_manager;
+import com.a101nechasim.tomer.model.database.Buyer_MySql;
+import com.a101nechasim.tomer.model.database.Finals_101;
+import com.a101nechasim.tomer.model.entity.Buyer;
 
 
 public class BuyerRegistrationFrag extends Fragment {
@@ -48,6 +54,7 @@ public class BuyerRegistrationFrag extends Fragment {
     private SeekBar sbFloor;
     private SeekBar sbMinValue;
     private SeekBar sbMaxValue;
+    private Button bAddToDB;
 
     /**
      * Find the Views in the layout<br />
@@ -74,14 +81,36 @@ public class BuyerRegistrationFrag extends Fragment {
         sbFloor = (SeekBar)v.findViewById( R.id.sbFloor );
         sbMinValue = (SeekBar)v.findViewById( R.id.sbMinValue );
         sbMaxValue = (SeekBar)v.findViewById( R.id.sbMaxValue );
-        Listeners.attachEdittextToSeekbar(sbMinRooms,etMinRooms);
-        Listeners.attachEdittextToSeekbar(sbMaxRooms,etMaxRooms);
-        Listeners.attachEdittextToSeekbar(sbFloor,etFloor);
-        Listeners.attachEdittextToSeekbar(sbMinValue,etMinValue);
-        Listeners.attachEdittextToSeekbar(sbMaxValue,etMaxValue);
+        bAddToDB = v.findViewById(R.id.bAddToDatabase);
+
+        Listeners.attachEdittextToSeekbar(sbMinRooms,etMinRooms,null);
+        Listeners.attachEdittextToSeekbar(sbMaxRooms,etMaxRooms,null);
+        Listeners.attachEdittextToSeekbar(sbFloor,etFloor,null);
+        Listeners.attachEdittextToSeekbar(sbMinValue,etMinValue,null);
+        Listeners.attachEdittextToSeekbar(sbMaxValue,etMaxValue,null);
 
 
 
+        bAddToDB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Buyer buyer = new Buyer();
+//                buyer.setMinAreaMeters(sbMinArea);
+                buyer.setName(etName.getText().toString());
+                buyer.setEmail(etEmail.getText().toString());
+                buyer.setMinRooms(sbMinRooms.getProgress());
+                buyer.setMaxRooms(sbMaxRooms.getProgress());
+                buyer.setPrivateHouseNecessary(sPrivate.isChecked());
+                buyer.setElevatorNecessary(sElevator.isChecked());
+                buyer.setCellphone(etPhone.getText().toString());
+                buyer.setCurrentFloor(sbFloor.getProgress());
+                buyer.setMaxValue(sbMaxValue.getProgress());
+                buyer.setMinValue(sbMinValue.getProgress());
+                DatabaseConnection.RegisterAsync registerAsync = new DatabaseConnection.RegisterAsync(getActivity().getApplicationContext(), (Buyer_MySql) buyers);
+                registerAsync.execute(buyer);
+
+            }
+        });
 
     }
 

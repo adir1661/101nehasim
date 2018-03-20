@@ -4,11 +4,18 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.SeekBar;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import com.a101nechasim.tomer.R;
+import com.a101nechasim.tomer.controller.tools.Listeners;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +34,51 @@ public class SellerRegisterationFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private EditText etName;
+    private EditText etPhone;
+    private EditText etEmail;
+    private EditText etAddress;
+    private TextView tvElevator;
+    private Switch sElevator;
+    private TextView tvPrivate;
+    private Switch sPrivate;
+    private SeekBar sbRooms;
+    private EditText etRooms;
+    private SeekBar sbFloor;
+    private EditText etFloor;
+    private SeekBar sbValue;
+    private EditText etValue;
+
+    /**
+     * Find the Views in the layout<br />
+     * <br />
+     * Auto-created on 2018-03-20 20:41:52 by Android Layout Finder
+     * (http://www.buzzingandroid.com/tools/android-layout-finder)
+     */
+    private void findViews() {
+        View v = getView();
+        etName = (EditText)v.findViewById( R.id.etName );
+        etPhone = (EditText)v.findViewById( R.id.etPhone );
+        etEmail = (EditText)v.findViewById( R.id.etEmail );
+        etAddress = (EditText)v.findViewById( R.id.etAddress );
+        tvElevator = (TextView)v.findViewById( R.id.tvElevator );
+        sElevator = (Switch)v.findViewById( R.id.sElevator );
+        tvPrivate = (TextView)v.findViewById( R.id.tvPrivate );
+        sPrivate = (Switch)v.findViewById( R.id.sPrivate );
+        sbRooms = (SeekBar)v.findViewById( R.id.sbRooms );
+        etRooms = (EditText)v.findViewById( R.id.etRooms );
+        sbFloor = (SeekBar)v.findViewById( R.id.sbFloor );
+        etFloor = (EditText)v.findViewById( R.id.etFloor );
+        sbValue = (SeekBar)v.findViewById( R.id.sbValue );
+        etValue = (EditText)v.findViewById( R.id.etValue );
+        Listeners.attachEdittextToSeekbar(sbFloor,etFloor,null);
+        Listeners.attachEdittextToSeekbar(sbRooms,etRooms,null);
+        Listeners.attachEdittextToSeekbar(sbValue,etValue,null);
+
+
+    }
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -66,6 +118,12 @@ public class SellerRegisterationFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.seller_registration_fragment, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        findViews();
     }
 
     // TODO: Rename method, update argument and hook method into UI event

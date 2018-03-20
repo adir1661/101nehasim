@@ -20,14 +20,14 @@ import java.util.Iterator;
 
 public class HttpTools {
     public static String GET(String url) throws Exception {
-        URL obj = new URL(url);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        URL url1 = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) url1.openConnection();
         con.setRequestMethod("GET");
         if (con.getResponseCode() == HttpURLConnection.HTTP_OK) { // success
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     con.getInputStream()));
             String inputLine;
-            StringBuffer response = new StringBuffer();
+            StringBuilder response = new StringBuilder();//StringBuffer Changed to StringBuilder
 
             while ((inputLine = in.readLine()) != null) {
                 response.append(inputLine);
@@ -40,6 +40,7 @@ public class HttpTools {
             return "";
         }
     }
+
     public static String POST(String url, ContentValues params) throws IOException {
 
         //Convert Map<String,Object> into key=value&key=value pairs.
@@ -48,7 +49,12 @@ public class HttpTools {
             if (postData.length() != 0) postData.append('&');
             postData.append(URLEncoder.encode(param, "UTF-8"));
             postData.append('=');
-            postData.append(URLEncoder.encode(String.valueOf(params.get(param)), "UTF-8"));
+            if (!(params.get(param) instanceof Boolean))
+                postData.append(URLEncoder.encode(String.valueOf(params.get(param)), "UTF-8"));
+            else
+            {
+                postData.append(URLEncoder.encode(String.valueOf((Boolean)params.get(param)==true? 1 : 0 ), "UTF-8"));
+            }
         }
 
         URL obj = new URL(url);
@@ -76,10 +82,9 @@ public class HttpTools {
                 response.append(inputLine);
             }
             in.close();
-            return removeSpaces(response.toString());
-        }
-        else {
-            return "";
+            return clarfyInt(response.toString());
+        } else {
+            return "0";
         }
     }
 
@@ -96,8 +101,10 @@ public class HttpTools {
         return result;
     }
 
-    static String removeSpaces(String str) {
-        str = str.replaceAll("\\s","");
-        return str;
+    static String clarfyInt(String str) {
+        if (str != "" && str != null) {
+            str = str.replaceAll("\\s", "");
+            return str;
+        } else return "0";
     }
 }

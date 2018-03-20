@@ -119,7 +119,7 @@
 
                 </LinearLayout>
 
-                <include layout="@layout/house_seller"/>
+                <include layout="@layout/house_seller" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

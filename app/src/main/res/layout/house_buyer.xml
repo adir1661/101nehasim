@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:layout_marginTop="0dp"
     android:orientation="vertical">
 
     <TextView
@@ -35,11 +35,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="5dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:text="Elevator at most?"
-            android:textSize="20sp"
-            android:layout_marginLeft="5dp" />
+            android:textSize="20sp" />
 
         <Switch
             android:id="@+id/sElevator"
@@ -155,11 +155,12 @@
                     android:layout_weight="1"
                     android:max="10"
                     android:min="1"
+                    android:paddingEnd="20dp"
+                    android:paddingRight="20dp"
                     android:progress="2" />
 
                 <EditText
                     android:id="@+id/etMinRooms"
-                    android:inputType="number"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -167,6 +168,7 @@
                     android:layout_marginRight="5dp"
                     android:gravity="center_horizontal"
                     android:hint="2"
+                    android:inputType="number"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -192,11 +194,12 @@
                     android:layout_weight="1"
                     android:max="10"
                     android:min="1"
+                    android:paddingEnd="20dp"
+                    android:paddingRight="20dp"
                     android:progress="2" />
 
                 <EditText
                     android:id="@+id/etMaxRooms"
-                    android:inputType="number"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -204,6 +207,7 @@
                     android:layout_marginRight="5dp"
                     android:gravity="center_horizontal"
                     android:hint="2"
+                    android:inputType="number"
                     android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
@@ -236,19 +240,20 @@
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:max="4"
-            android:min="0"
+            android:paddingEnd="20dp"
+            android:paddingRight="20dp"
             android:progress="0" />
 
         <EditText
             android:id="@+id/etFloor"
             android:layout_width="50dp"
-            android:inputType="number"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:gravity="center_horizontal"
             android:hint="2"
+            android:inputType="number"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -287,27 +292,30 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:paddingEnd="20dp"
                 android:layout_weight="1"
                 android:max="5000"
                 android:min="500"
-                android:progress="500" />
+                android:progress="500"
+                android:paddingRight="20dp" />
 
             <EditText
                 android:id="@+id/etMinValue"
                 android:layout_width="75dp"
-                android:inputType="number"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:gravity="center_horizontal"
                 android:hint="500k"
+                android:inputType="number"
                 android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <TextView
@@ -323,23 +331,38 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:paddingEnd="20dp"
                 android:layout_weight="1"
                 android:max="5000"
                 android:min="500"
-                android:progress="3000" />
+                android:progress="3000"
+                android:paddingRight="20dp" />
 
             <EditText
                 android:id="@+id/etMaxValue"
                 android:layout_width="75dp"
-                android:inputType="number"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:gravity="center_horizontal"
                 android:hint="3000k"
+                android:inputType="number"
                 android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/bAddToDatabase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/orange"
+        android:elevation="6dp"
+        android:padding="10dp"
+        android:text="Add to database"
+        android:textColor="@color/defaultColor" />
 
 </LinearLayout>

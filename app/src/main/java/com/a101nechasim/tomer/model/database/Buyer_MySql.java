@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 public class Buyer_MySql implements DB_manager {
-    private final String webURL = "http://101nehasim.tech/databse/";
+    private final String webURL = "http://101nehasim.tech/database/";
     @Override
     public boolean isExist(String email, String password) {
         return false;

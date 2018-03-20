@@ -153,7 +153,7 @@
 
 
         <SeekBar
-            android:id="@+id/sbMinRooms"
+            android:id="@+id/sbRooms"
             style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -166,6 +166,7 @@
             android:progress="2" />
 
         <EditText
+            android:id="@+id/etRooms"
             android:inputType="number"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
@@ -210,6 +211,7 @@
             android:progress="0" />
 
         <EditText
+            android:id="@+id/etFloor"
             android:inputType="number"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
@@ -252,8 +254,8 @@
             android:max="5000"
             android:min="500"
             android:progress="2000" />
-
         <EditText
+            android:id="@+id/etValue"
             android:layout_width="80dp"
             android:inputType="number"
             android:layout_height="wrap_content"

@@ -23,7 +23,7 @@ public class DatabaseConnection {
     public static class RegisterAsync extends AsyncTask<Buyer, ProgressBar, Void> {
         WeakReference<Context> mContext;
         DB_manager mDB_connection;
-        RegisterAsync (Context context, Buyer_MySql DB_connection){
+        public RegisterAsync(Context context, Buyer_MySql DB_connection){
             mContext = new WeakReference<>(context);
             mDB_connection = DB_connection;
 
@@ -35,11 +35,6 @@ public class DatabaseConnection {
             long id = mDB_connection.addUser(buyers[0]);
             buyers[0].setId(id);
             //-------------- Shared Preferences  - save in the app ---------------
-            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-            SharedPreferences.Editor editor =  sharedPreferences.edit();
-            editor.putLong(Finals_101.Buyer.ID , buyers[0].getId());
-            editor.putString(Finals_101.Buyer.NAME, buyers[0].getName());
-            editor.apply();
             return null;
         }
         @Override
