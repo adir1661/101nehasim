@@ -26,13 +26,18 @@ public class Seller_viewHolder implements ViewHolder_101{
         tvAddress = itemView.findViewById(R.id.tvAddress);
     }
 
+    @Override
+    public ViewHolder_101 create() {
+        return new Seller_viewHolder();
+    }
+
     @SuppressLint("SetTextI18n")
     @Override
     public void insertDetailsToView(Customer customer){
         Seller seller = (Seller) customer;
         tvName.setText(seller.getName());
         tvAddress.setText(seller.getHouse().getAddress());
-        tvValue.setText(seller.getPrice()*1000+"");
+        tvValue.setText(seller.getPrice()+"");
     };
 
 }

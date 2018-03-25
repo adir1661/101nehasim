@@ -46,7 +46,7 @@ public class HousesRecycleAdapter extends RecyclerView.Adapter<HousesRecycleAdap
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Customer customer = filterList.get(position);
-        holder.getViewHolder_101().insertDetailsToView(customer);
+        holder.viewHolder_101Instance().insertDetailsToView(customer);
     }
 
     @Override
@@ -62,8 +62,9 @@ public class HousesRecycleAdapter extends RecyclerView.Adapter<HousesRecycleAdap
             protected FilterResults performFiltering(CharSequence constraint) {
                 FilterResults filterResults = new FilterResults();
                 filterList.clear();
+                String str = (String) constraint;
                 for (Customer customer : itemList) {
-                    if (customer.getName().contains(constraint))// condtition here: if the word in the searchView included in seller name
+                    if (customer.getName().toLowerCase().contains(str.toLowerCase()))// condtition here: if the word in the searchView included in seller name
                         filterList.add(customer);
                 }
                 return filterResults;
@@ -78,15 +79,20 @@ public class HousesRecycleAdapter extends RecyclerView.Adapter<HousesRecycleAdap
 //---------------------------------------------------viewholder--------------------------------------
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        public ViewHolder_101 getViewHolder_101() {
-            return viewHolder_101;
-        }
-
         private ViewHolder_101 viewHolder_101;
 
         public ViewHolder(View itemView) {
             super(itemView);
+            viewHolder_101Instance();
             viewHolder_101.SetViewHolder(itemView);
+        }
+
+        public ViewHolder_101 viewHolder_101Instance() {
+            if (viewHolder_101==null)
+            {
+                viewHolder_101 = mViewHolder_101.create();
+            }
+            return viewHolder_101;
         }
     }
 

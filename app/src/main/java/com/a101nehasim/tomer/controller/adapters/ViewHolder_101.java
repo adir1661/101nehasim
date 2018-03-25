@@ -12,4 +12,5 @@ public interface ViewHolder_101  {
 
     public abstract void insertDetailsToView(Customer customer);
     public abstract void SetViewHolder (View itemView);
+    public abstract ViewHolder_101 create();
 }
