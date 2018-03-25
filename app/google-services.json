@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "61561702469",
+    "firebase_url": "https://nehasim-9906c.firebaseio.com",
+    "project_id": "nehasim-9906c",
+    "storage_bucket": "nehasim-9906c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61561702469:android:bd254407c6ef1165",
+        "android_client_info": {
+          "package_name": "com.a101nehasim.tomer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61561702469-fucpccejh3bj9rfhu71dkr7q094kr5m6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.a101nehasim.tomer",
+            "certificate_hash": "f37ae5e32f64f464d0feca63b4fcf050a7e03d1c"
+          }
+        },
+        {
+          "client_id": "61561702469-mea1b1m0q90ul5ctnjkl4o2kmeprm4dv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcyZJRB-kSXDPbJk1s47Y4r1rlJ30s9fo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61561702469-mea1b1m0q90ul5ctnjkl4o2kmeprm4dv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -361,8 +361,10 @@
         android:layout_marginTop="30dp"
         android:background="@color/orange"
         android:elevation="6dp"
+        android:drawableStart="@drawable/ic_note_add_white_36dp"
         android:padding="10dp"
         android:text="Add to database"
-        android:textColor="@color/defaultColor" />
+        android:textColor="@color/defaultColor"
+        android:drawableLeft="@drawable/ic_note_add_white_36dp" />
 
 </LinearLayout>

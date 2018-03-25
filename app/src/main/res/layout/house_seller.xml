@@ -208,7 +208,7 @@
             android:layout_weight="1"
             android:max="4"
             android:min="0"
-            android:progress="0" />
+            android:progress="2" />
 
         <EditText
             android:id="@+id/etFloor"
@@ -267,5 +267,6 @@
             android:textSize="20sp" />
 
     </LinearLayout>
+
 
 </LinearLayout>

@@ -2,125 +2,154 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/grayBackground"
     android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margins_grey"
-                android:layout_marginBottom="25dp"
-                android:background="@drawable/white_bordered"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="15dp"
-                    android:src="@mipmap/default_house_icon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Seller Details"
-                    android:textSize="@dimen/title" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginStart="30dp"
-                    android:background="#bebdbd" />
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="@dimen/margins_grey"
+                android:layout_marginRight="@dimen/margins_grey"
+                android:layout_marginTop="@dimen/margins_grey"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="12dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:src="@mipmap/default_house_icon" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginStart="5dp"
-                        android:text="Name:"
-                        android:textSize="20sp" />
+                        android:layout_gravity="center_horizontal"
+                        android:text="Seller Details"
+                        android:textSize="@dimen/title" />
 
-                    <EditText
-                        android:id="@+id/etName"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginStart="30dp"
+                        android:background="#bebdbd" />
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginRight="5dp"
-                        android:hint="Israel Israeli" />
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal">
 
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
+                            android:text="Name:"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/etName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:hint="Israel Israeli" />
+
+                    </LinearLayout>
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
 
-                    <TextView
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
+                            android:text="Phone Number:"
+                            android:textSize="20sp" />
+
+
+                        <EditText
+                            android:id="@+id/etPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:hint="05********"
+                            android:inputType="phone" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
+                            android:text="Email:"
+                            android:textSize="20sp" />
+
+
+                        <EditText
+                            android:id="@+id/etEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:hint="Israel@example.com"
+                            android:inputType="textEmailAddress" />
+
+                    </LinearLayout>
+
+                    <include layout="@layout/house_seller" />
+
+                    <Button
+                        android:id="@+id/bAddToDatabase"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginStart="5dp"
-                        android:text="Phone Number:"
-                        android:textSize="20sp" />
-
-
-                    <EditText
-                        android:id="@+id/etPhone"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginRight="5dp"
-                        android:hint="05********"
-                        android:inputType="phone" />
-
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@color/orange"
+                        android:elevation="6dp"
+                        android:padding="10dp"
+                        android:text="Add to database"
+                        android:drawableStart="@drawable/ic_note_add_white_36dp"
+                        android:textColor="@color/defaultColor"
+                        android:drawableLeft="@drawable/ic_note_add_white_36dp" />
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginStart="5dp"
-                        android:text="Email:"
-                        android:textSize="20sp" />
-
-
-                    <EditText
-                        android:id="@+id/etEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginRight="5dp"
-                        android:hint="Israel@example.com"
-                        android:inputType="textEmailAddress" />
-
-                </LinearLayout>
-
-                <include layout="@layout/house_seller" />
-            </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:visibility="invisible"/>
         </LinearLayout>
     </ScrollView>
 
