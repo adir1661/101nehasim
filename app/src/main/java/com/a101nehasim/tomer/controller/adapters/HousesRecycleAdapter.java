@@ -1,5 +1,8 @@
 package com.a101nehasim.tomer.controller.adapters;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -25,7 +28,7 @@ public class HousesRecycleAdapter extends RecyclerView.Adapter<HousesRecycleAdap
     private int itemId;
     private WeakReference<Context> mContext;
     ViewHolder_101 mViewHolder_101;
-
+    private long delay = 0;
 
     public HousesRecycleAdapter(Context context, int layoutId, List<Customer> customerList, ViewHolder_101 viewHolder_101) {
         this.itemList.addAll(customerList);
@@ -47,6 +50,31 @@ public class HousesRecycleAdapter extends RecyclerView.Adapter<HousesRecycleAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Customer customer = filterList.get(position);
         holder.viewHolder_101Instance().insertDetailsToView(customer);
+        final View view = holder.itemView;
+        view.setVisibility(View.INVISIBLE);
+        ObjectAnimator animation;
+        if (position % 2 == 0)
+            animation = ObjectAnimator.ofFloat(view, "translationX", -500f, 0f);
+        else
+            animation = ObjectAnimator.ofFloat(view, "translationX", 500f, 0f);
+        animation.setDuration(400);
+        animation.setStartDelay(delay);
+        if (delay < 600)
+            delay += 100;
+        animation.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                delay = 0;
+            }
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+                view.setVisibility(View.VISIBLE);
+            }
+        });
+        animation.start();
     }
 
     @Override
@@ -88,8 +116,7 @@ public class HousesRecycleAdapter extends RecyclerView.Adapter<HousesRecycleAdap
         }
 
         public ViewHolder_101 viewHolder_101Instance() {
-            if (viewHolder_101==null)
-            {
+            if (viewHolder_101 == null) {
                 viewHolder_101 = mViewHolder_101.create();
             }
             return viewHolder_101;

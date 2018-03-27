@@ -98,19 +98,7 @@ public class BrowseFragment extends Fragment implements Handler.Callback{
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         findViews();
-        svFilter.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                housesRecycleAdapter.getFilter().filter(newText);
-                housesRecycleAdapter.notifyDataSetChanged();
-                return true;
-            }
-        });
 
 
 
@@ -144,8 +132,20 @@ public class BrowseFragment extends Fragment implements Handler.Callback{
         recyclerView.setLayoutManager(mLayoutManager);
         sellerViewHolder = new Seller_viewHolder();
         housesRecycleAdapter = new HousesRecycleAdapter(getActivity(),R.layout.result_item,customers,sellerViewHolder);
+        svFilter.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String newText) {
 
+                housesRecycleAdapter.getFilter().filter(newText);
+                housesRecycleAdapter.notifyDataSetChanged();
+                return true;
+            }
+        });
         recyclerView.setAdapter(housesRecycleAdapter);
         return false;
     }

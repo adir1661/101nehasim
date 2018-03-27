@@ -161,8 +161,7 @@
             android:layout_weight="1"
             android:layout_marginRight="8dp"
             android:layout_marginLeft="20dp"
-            android:max="10"
-            android:min="1"
+            android:max="9"
             android:progress="2" />
 
         <EditText
@@ -207,7 +206,6 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:max="4"
-            android:min="0"
             android:progress="0" />
 
         <EditText
@@ -251,8 +249,7 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:layout_marginLeft="20dp"
-            android:max="5000"
-            android:min="500"
+            android:max="4500"
             android:progress="2000" />
         <EditText
             android:id="@+id/etValue"

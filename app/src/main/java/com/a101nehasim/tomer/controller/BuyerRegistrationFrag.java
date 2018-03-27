@@ -1,14 +1,18 @@
 package com.a101nehasim.tomer.controller;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -54,6 +58,8 @@ public class BuyerRegistrationFrag extends Fragment {
     private SeekBar sbMaxValue;
     private Button bAddToDB;
 
+    CardView buyerLayout;
+
     /**
      * Find the Views in the layout<br />
      * <br />
@@ -62,6 +68,7 @@ public class BuyerRegistrationFrag extends Fragment {
      */
     private void findViews() {
         View v = getView();
+        buyerLayout = v.findViewById(R.id.buyerLayout);
         etName = (EditText)v.findViewById( R.id.etName );
         etPhone = (EditText)v.findViewById( R.id.etPhone );
         etEmail = (EditText)v.findViewById( R.id.etEmail );
@@ -156,7 +163,11 @@ public class BuyerRegistrationFrag extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         findViews();
+        ObjectAnimator animation = ObjectAnimator.ofFloat(buyerLayout, "translationY", -2000f,0f);
+        animation.setDuration(800);
+        animation.start();
 
     }
 

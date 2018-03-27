@@ -1,9 +1,11 @@
 package com.a101nehasim.tomer.controller;
 
+import android.animation.ObjectAnimator;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +56,7 @@ public class SellerRegisterationFragment extends Fragment {
     private SeekBar sbValue;
     private EditText etValue;
     Button bAddToDatabase;
+    CardView sellerLayout;
 
     /**
      * Find the Views in the layout<br />
@@ -63,6 +66,7 @@ public class SellerRegisterationFragment extends Fragment {
      */
     private void findViews() {
         View v = getView();
+        sellerLayout= v.findViewById(R.id.sellerLayout);
         etName = (EditText)v.findViewById( R.id.etName );
         etPhone = (EditText)v.findViewById( R.id.etPhone );
         etEmail = (EditText)v.findViewById( R.id.etEmail );
@@ -154,6 +158,9 @@ public class SellerRegisterationFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         findViews();
+        ObjectAnimator animation = ObjectAnimator.ofFloat(sellerLayout, "translationY", -2000f,0f);
+        animation.setDuration(800);
+        animation.start();
     }
 
     // TODO: Rename method, update argument and hook method into UI event

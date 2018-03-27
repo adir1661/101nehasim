@@ -6,6 +6,7 @@
     <color name="grayBackground">#eaeaea</color>
     <color name="defaultColor">#ffffff</color>
     <color name="orange">#e68625</color>
+    <color name="orange_dark">#878787</color>
     <color name="textShadow">#97877e7e</color>
 
 </resources>

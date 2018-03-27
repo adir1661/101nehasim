@@ -1,5 +1,9 @@
 package com.a101nehasim.tomer.controller;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
@@ -13,12 +17,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.a101nehasim.tomer.R;
 
 import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.zip.Inflater;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,6 +51,7 @@ public class NavigationFragment extends Fragment implements View.OnClickListener
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    private TextView textView;
 
     public NavigationFragment() {
         // Required empty public constructor
@@ -88,6 +95,8 @@ public class NavigationFragment extends Fragment implements View.OnClickListener
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         findViews();
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -136,6 +145,7 @@ public class NavigationFragment extends Fragment implements View.OnClickListener
         bAddBuyer = (Button) v.findViewById(R.id.bAddBuyer);
         bAddSeller = (Button) v.findViewById(R.id.bAddSeller);
         bSignAContect = v.findViewById(R.id.bSignAContract);
+        textView = v.findViewById(R.id.textView);
 
         bSearch.setOnClickListener(this);
         bAddBuyer.setOnClickListener(this);
@@ -164,7 +174,11 @@ public class NavigationFragment extends Fragment implements View.OnClickListener
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         } else if (v == bSignAContect) {
-            getDocument();
+            ObjectAnimator animation = ObjectAnimator.ofFloat(textView, "alpha", 0f,1f);
+            animation.setDuration(1000);
+            animation.setRepeatCount(3);
+            animation.setRepeatMode(ValueAnimator.REVERSE);
+            animation.start();
         }
     }
 
