@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
+
     defaultConfig {
         applicationId "com.a101nehasim.tomer"
         minSdkVersion 15
@@ -31,22 +32,22 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile 'com.android.support:recyclerview-v7:27.1.0'
-    compile 'de.hdodenhof:circleimageview:2.1.0'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.google.android.gms:play-services-auth:11.8.0'
-    compile 'pub.devrel:easypermissions:0.3.0'
-    compile('com.google.api-client:google-api-client-android:1.23.0') {
+    implementation 'com.android.support:recyclerview-v7:27.1.0'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.android.gms:play-services-auth:11.8.0'
+    implementation 'pub.devrel:easypermissions:0.3.0'
+    implementation('com.google.api-client:google-api-client-android:1.23.0') {
         exclude group: 'org.apache.httpcomponents'
     }
-    compile('com.google.apis:google-api-services-sheets:v4-rev512-1.23.0') {
+    implementation('com.google.apis:google-api-services-sheets:v4-rev512-1.23.0') {
         exclude group: 'org.apache.httpcomponents'
         implementation 'com.android.support:cardview-v7:26.1.0'
     }
-    compile 'com.kyanogen.signatureview:signature-view:1.2'
-    implementation 'com.tom_roush:pdfbox-android:1.8.9.1'
+//    implementation 'com.kyanogen.signatureview:signature-view:1.2'
+//    implementation 'com.tom_roush:pdfbox-android:1.8.9.1'
 
 
 
-    compile project(path: ':adirstools')
+    implementation project(path: ':adirstools')
 }
