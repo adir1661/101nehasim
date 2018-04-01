@@ -1,8 +1,19 @@
 <resources>
 
-    <style name="AppTheme.NoActionBar">
+    <style name="AppTheme.NoActionBar" >
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="cardViewStyle">@style/CardView</item>
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryDark">@color/grey</item>
+        <item name="colorAccent">@color/orange</item>
+        <item name="android:navigationBarColor">@color/grey</item>
+        <item name="android:windowBackground">@color/orange_background</item>
+        <item name="android:buttonStyle">@style/myButtonStyle</item>
+    </style>
+
 </resources>

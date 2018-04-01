@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/grayBackground"
     android:orientation="vertical"
     >
 
@@ -44,7 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="Buyer Details"
+                    android:text="@string/buyer_details"
                     android:shadowColor="@color/textShadow"
                     android:shadowDx="1"
                     android:shadowDy="1"
@@ -69,7 +68,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginStart="5dp"
-                        android:text="Name:"
+                        android:text="@string/name"
                         android:textSize="20sp" />
 
                     <EditText
@@ -78,7 +77,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
                         android:layout_marginRight="5dp"
-                        android:hint="Israel Israeli" />
+                        android:hint="@string/israel_israeli" />
 
                 </LinearLayout>
 
@@ -94,7 +93,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginStart="5dp"
-                        android:text="Phone Number:"
+                        android:text="@string/phone_number"
                         android:textSize="20sp" />
 
 
@@ -104,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
                         android:layout_marginRight="5dp"
-                        android:hint="05********"
+                        android:hint="@string/phone_example"
                         android:inputType="phone" />
 
                 </LinearLayout>
@@ -120,7 +119,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginStart="5dp"
-                        android:text="Email:"
+                        android:text="@string/email"
                         android:textSize="20sp" />
 
 

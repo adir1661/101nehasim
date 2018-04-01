@@ -28,7 +28,6 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_weight="1"
                 android:elevation="6dp"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/download2" />
@@ -46,7 +45,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="address"
-                    android:textSize="40sp" />
+                    android:textSize="30sp"
+                    android:lines="1"/>
 
                 <TextView
                     android:id="@+id/tvName"
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="Name"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tvValue"
@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="Price"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
 

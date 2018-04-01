@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="0dp"
+    android:layout_marginTop="-250dp"
     android:orientation="vertical">
 
     <TextView
@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:text="House Range Details"
+        android:text="@string/house_range_details"
         android:textSize="@dimen/title" />
 
     <View
@@ -38,7 +38,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
-            android:text="Elevator at most?"
+            android:text="@string/elevator_at_most"
             android:textSize="20sp" />
 
         <Switch
@@ -69,7 +69,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
-            android:text="Only Private?"
+            android:text="@string/only_private"
             android:textSize="20sp" />
 
         <Switch
@@ -98,7 +98,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
-            android:text="Rooms:"
+            android:text="@string/rooms"
             android:textSize="20sp" />
 
         <NumberPicker
@@ -124,7 +124,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="20dp"
             android:layout_weight="0"
-            android:text="Rooms Range"
+            android:text="@string/rooms_range"
             android:textSize="25sp"
             android:textStyle="" />
 
@@ -144,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Min:" />
+                    android:text="@string/min" />
 
                 <SeekBar
                     android:id="@+id/sbMinRooms"
@@ -182,7 +182,7 @@
 
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="max:" />
+                    android:text="@string/max" />
 
                 <SeekBar
                     android:id="@+id/sbMaxRooms"
@@ -219,7 +219,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
-        android:text="Floor"
+        android:text="@string/floor"
         android:textSize="20sp" />
 
     <LinearLayout
@@ -265,7 +265,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
         android:layout_weight="0"
-        android:text="Value:"
+        android:text="@string/value"
         android:textSize="20sp" />
 
     <LinearLayout
@@ -282,7 +282,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Min:" />
+                android:text="@string/min" />
 
             <SeekBar
                 android:id="@+id/sbMinValue"
@@ -320,7 +320,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="Max:" />
+                android:text="@string/max" />
 
             <SeekBar
                 android:id="@+id/sbMaxValue"
@@ -356,11 +356,10 @@
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="30dp"
-        android:background="@color/orange"
         android:elevation="6dp"
         android:drawableStart="@drawable/ic_note_add_white_36dp"
         android:padding="10dp"
-        android:text="Add to database"
+        android:text="@string/add_to_database"
         android:textColor="@color/defaultColor"
         android:drawableLeft="@drawable/ic_note_add_white_36dp" />
 

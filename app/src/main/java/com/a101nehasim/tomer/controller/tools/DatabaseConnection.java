@@ -24,6 +24,7 @@ import java.util.ArrayList;
  */
 
 public class DatabaseConnection {
+    //TODO: add ProgressBar to long action.
     public static class BuyerRegisterAsync extends AsyncTask<Buyer, ProgressBar, Void> {
         WeakReference<Context> mContext;
         DB_manager mDB_connection;

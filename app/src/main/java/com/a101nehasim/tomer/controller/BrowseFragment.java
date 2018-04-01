@@ -34,6 +34,7 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class BrowseFragment extends Fragment implements Handler.Callback{
+    //TODO: manange onitemClick for remove or view obj
     DB_manager DB_sellers = DB_factory.sellerListInstance();
 
     SearchView svFilter;

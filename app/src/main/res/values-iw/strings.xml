@@ -1,27 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">101Nehasim</string>
-
-    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
-    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-
-    <string name="action_settings" translatable="false">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="buyer_details">Buyer Details</string>
+    <string name="app_name">101 נכסים</string>
     <string name="name">Name:</string>
     <string name="israel_israeli">Israel Israeli</string>
-    <string name="phone_number">Phone Number:</string>
-    <string name="phone_example">05********</string>
     <string name="email">Email:</string>
-    <string name="house_range_details">House Range Details</string>
     <string name="house_range_details">House Range Details</string>
     <string name="elevator_at_most">Elevator at most?</string>
     <string name="elevator_at_most">Elevator at most?</string>
     <string name="only_private">Only Private?</string>
     <string name="only_private">Only Private?</string>
     <string name="rooms_range">Rooms Range</string>
-    <string name="min">Min:</string>
     <string name="floor">Floor</string>
     <string name="value">Value:</string>
     <string name="min">Min:</string>
@@ -29,7 +18,6 @@
     <string name="max">Max:</string>
     <string name="add_to_database">Add to database</string>
     <string name="rooms">Rooms:</string>
-    <string name="rooms_range">Rooms Range</string>
     <string name="min">Min:</string>
     <string name="max">Max:</string>
     <string name="floor">Floor</string>
